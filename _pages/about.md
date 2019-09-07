@@ -2,7 +2,7 @@
 title: "About"
 permalink: /about/
 header:
-  image: "/images/profile.jpg"
+  image: "/images/pacifica.jpg"
 ---
 
 I'm an up-and-coming data scientist with a deep passion for machine learning and AI. I specialize in exploratory analysis, data wrangling/cleansing, feature engineering, visualizations, building/training/tuning classic machine learning models as well as deep neural networks, testing & evaluating model performance and communicating the results & insights to the relevant audience. I'm proficient in a wide variety of BI tools and technologies for performing end-to-end data analyses, including Python (Jupyter Notebooks, Pandas, Numpy, Matplotlib, Sklearn, Keras, NLTK, Gensim, Spacy, TensorFlow, Seaborn, OpenCV, etc.), SQL and relational databases (MySQL, PostgreSQL) and  Tableau (creating charts, visualizations and interactive dashboards). 
