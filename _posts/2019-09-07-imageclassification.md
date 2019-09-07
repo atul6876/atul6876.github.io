@@ -3,7 +3,7 @@ title: "Dogs vs Cats - Binary Image Classification"
 date: 2019-09-07
 tags: [image classification, data science, dogs vs cats, CNNs]
 header:
-  image: "/images/perceptron/percept.jpg"
+  image: "/images/perceptron/Cats-v-Dogs.jpg"
 excerpt: "Binary Image Classification, Dogs v/s Cats, Custom CNN model, Transfer Learning"
 mathjax: "true"
 ---
