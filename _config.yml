@@ -85,7 +85,7 @@ analytics:
 # Site Author
 author:
   name             : "Atul Singh"
-  avatar           : "/images/bio-pic-2.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science Portfolio"
   location         : "San Francisco Bay Area"
   email            : "asing217@asu.edu"
@@ -97,7 +97,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/atul6876/"
+  github           : "atul6876/"
   gitlab           : 
   google_plus      :
   keybase          :
