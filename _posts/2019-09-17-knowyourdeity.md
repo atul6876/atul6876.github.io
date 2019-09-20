@@ -32,127 +32,126 @@ import requests
 
 
 ```python
-# searchterm = 'Ganesh Painting' # will also be the name of the folder
-# url = "https://www.google.co.in/search?q="+searchterm+"&source=lnms&tbm=isch"
-# # NEED TO DOWNLOAD CHROMEDRIVER, insert path to chromedriver inside parentheses in following line
-# browser = webdriver.Chrome('webdriver/chromedriver.exe')
-# browser.get(url)
-# header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
+ searchterm = 'Ganesh Painting' # will also be the name of the folder
+ url = "https://www.google.co.in/search?q="+searchterm+"&source=lnms&tbm=isch"
+ # NEED TO DOWNLOAD CHROMEDRIVER, insert path to chromedriver inside parentheses in following line
+ browser = webdriver.Chrome('webdriver/chromedriver.exe')
+ browser.get(url)
+ header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
 
-# urlList = []
+urlList = []
 
-# if not os.path.exists(searchterm):
-#     os.mkdir(searchterm)
+ if not os.path.exists(searchterm):
+     os.mkdir(searchterm)
 
-# for _ in range(500):
-#     browser.execute_script("window.scrollBy(0,10000)")
-# for x in browser.find_elements_by_xpath('//div[contains(@class,"rg_meta")]'):
-#     #print("URL:",json.loads(x.get_attribute('innerHTML'))["ou"])
-#     urlList.append(json.loads(x.get_attribute('innerHTML'))["ou"])
+ for _ in range(500):
+     browser.execute_script("window.scrollBy(0,10000)")
+ for x in browser.find_elements_by_xpath('//div[contains(@class,"rg_meta")]'):
+     #print("URL:",json.loads(x.get_attribute('innerHTML'))["ou"])
+     urlList.append(json.loads(x.get_attribute('innerHTML'))["ou"])
 
-# browser.close()
-# print('Number of URLs tracked: ', len(urlList))
+ browser.close()
+ print('Number of URLs tracked: ', len(urlList))
 
-# with open(searchterm+'URLs.txt', 'w') as f:
-#     for item in urlList:
-#         f.write("%s\n" % item)
+ with open(searchterm+'URLs.txt', 'w') as f:
+     for item in urlList:
+         f.write("%s\n" % item)
 ```
 
 
 ```python
-# searchterm = 'Buddha Painting' # will also be the name of the folder
-# url = "https://www.google.co.in/search?q="+searchterm+"&source=lnms&tbm=isch"
-# # NEED TO DOWNLOAD CHROMEDRIVER, insert path to chromedriver inside parentheses in following line
-# browser = webdriver.Chrome('webdriver/chromedriver.exe')
-# browser.get(url)
-# header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
+ searchterm = 'Buddha Painting' # will also be the name of the folder
+ url = "https://www.google.co.in/search?q="+searchterm+"&source=lnms&tbm=isch"
+ # NEED TO DOWNLOAD CHROMEDRIVER, insert path to chromedriver inside parentheses in following line
+ browser = webdriver.Chrome('webdriver/chromedriver.exe')
+ browser.get(url)
+ header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
 
-# urlList = []
+ urlList = []
 
-# if not os.path.exists(searchterm):
-#     os.mkdir(searchterm)
+ if not os.path.exists(searchterm):
+     os.mkdir(searchterm)
 
-# for _ in range(500):
-#    browser.execute_script("window.scrollBy(0,10000)")
+ for _ in range(500):
+    browser.execute_script("window.scrollBy(0,10000)")
 
-# for x in browser.find_elements_by_xpath('//div[contains(@class,"rg_meta")]'):
-#     #print("URL:",json.loads(x.get_attribute('innerHTML'))["ou"])
-#     urlList.append(json.loads(x.get_attribute('innerHTML'))["ou"])
+ for x in browser.find_elements_by_xpath('//div[contains(@class,"rg_meta")]'):
+     #print("URL:",json.loads(x.get_attribute('innerHTML'))["ou"])
+     urlList.append(json.loads(x.get_attribute('innerHTML'))["ou"])
 
-# browser.close()
-# print('Number of URLs tracked: ', len(urlList))
+ browser.close()
+ print('Number of URLs tracked: ', len(urlList))
 
-# with open(searchterm+'URLs.txt', 'w') as f:
-#     for item in urlList:
-#         f.write("%s\n" % item)
+ with open(searchterm+'URLs.txt', 'w') as f:
+     for item in urlList:
+         f.write("%s\n" % item)
 ```
 
 
 ```python
-# searchterm = 'Ganesh Painting'
+ searchterm = 'Ganesh Painting'
 
-# path_text=searchterm+'URLs.txt'
+ path_text=searchterm+'URLs.txt'
 
-# o = open(path_text,"r")
-# url0 = o.read()
-# o.close()
+ o = open(path_text,"r")
+ url0 = o.read()
+ o.close()
 
-# ## list, containing downloaded files
-# urls = url0.split()
-# print("The number of urls: {}".format(len(urls)))
-# print('-'*50)
-# for url in urls[:10]:
-#     print(url)
+ ## list, containing downloaded files
+ urls = url0.split()
+ print("The number of urls: {}".format(len(urls)))
+ print('-'*50)
+ for url in urls[:10]:
+     print(url)
 
-# loc_data = "./data/"+searchterm+"/"
-# try:
-#     os.makedirs(loc_data)
-# except:
-#     pass
-# iimage = 0
-# for url in urls:
-#     try:
-#         f = open(loc_data + 'image{:05.0f}.jpg'.format(iimage),'wb')
-#         f.write(requests.get(url).content)
-#         f.close()
-#         iimage += 1
-#     except Exception as e:
-#         print("\n{} {}".format(e,url))
-#         pass
+ loc_data = "./data/"+searchterm+"/"
+ try:
+     os.makedirs(loc_data)
+ except:
+     pass
+ iimage = 0
+ for url in urls:
+     try:
+         f = open(loc_data + 'image{:05.0f}.jpg'.format(iimage),'wb')
+         f.write(requests.get(url).content)
+         f.close()
+         iimage += 1
+     except Exception as e:
+         print("\n{} {}".format(e,url))
+         pass
 ```
 
 
 ```python
-# searchterm = 'Buddha Painting'
+ searchterm = 'Buddha Painting'
 
-# path_text=searchterm+'URLs.txt'
+ path_text=searchterm+'URLs.txt'
 
-# o = open(path_text,"r")
-# url0 = o.read()
-# o.close()
+ o = open(path_text,"r")
+ url0 = o.read()
+ o.close()
 
-# ## list, containing downloaded files
-# urls = url0.split()
-# print("The number of urls: {}".format(len(urls)))
-# print('-'*50)
-# for url in urls[:10]:
-#     print(url)
-
-# loc_data = "./data/"+searchterm+"/"
-# try:
-#     os.makedirs(loc_data)
-# except:
-#     pass
-# iimage = 0
-# for url in urls:
-#     try:
-#         f = open(loc_data + 'image{:05.0f}.jpg'.format(iimage),'wb')
-#         f.write(requests.get(url).content)
-#         f.close()
-#         iimage += 1
-#     except Exception as e:
-#         print("\n{} {}".format(e,url))
-#         pass
+ ## list, containing downloaded files
+ urls = url0.split()
+ print("The number of urls: {}".format(len(urls)))
+ print('-'*50)
+ for url in urls[:10]:
+    print(url)
+ loc_data = "./data/"+searchterm+"/"
+ try:
+     os.makedirs(loc_data)
+ except:
+     pass
+ iimage = 0
+ for url in urls:
+     try:
+         f = open(loc_data + 'image{:05.0f}.jpg'.format(iimage),'wb')
+         f.write(requests.get(url).content)
+         f.close()
+         iimage += 1
+     except Exception as e:
+         print("\n{} {}".format(e,url))
+         pass
 ```
 
 
